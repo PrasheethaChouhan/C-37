@@ -6,7 +6,7 @@ var clearAll;
 
 function setup(){
     createCanvas(500,500);
-    canvas = createCanvas(camera.position.x = displayWidth/2,camera.position.y = displayWidth/2);
+    canvas = createCanvas(displayWidth,displayHeight);
     database = firebase.database();
     clearAll = createButton("ClearAll");
 }
@@ -21,8 +21,9 @@ function draw()
     clearAll.position(displayWidth-150, 100);
     clearAll.mousePressed(()=>{
         alert("please refresh the screen");
-        database(null);
-        drawing = 0;
+        background(255);
+        drawing = [];
+        db_drawing = [];
     })
     for(var i=0; i<db_drawing.length; i++)
     {
